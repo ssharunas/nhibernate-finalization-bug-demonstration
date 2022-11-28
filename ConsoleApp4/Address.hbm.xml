@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="ConsoleApp4.Address, ConsoleApp4" table="address" lazy="true">
+		<id name="Key" column="id">
+			<generator class="hilo">
+				<param name="table">hi_value</param>
+				<param name="column">next_value</param>
+				<param name="max_lo">10</param>
+			</generator>
+		</id>
+		<property name="AddressLine" type="String" column="address_line"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+	<class name="ConsoleApp4.Person, ConsoleApp4"  table="person" lazy="true">
+		<id name="Key" column="id" >
+			<generator class="hilo">
+				<param name="table">hi_value</param>
+				<param name="column">next_value</param>
+				<param name="max_lo">10</param>
+			</generator>
+		</id>
+		<property name="FirstName" type="String" column="first_name" not-null="true" />
+		<many-to-one name="Address" class="ConsoleApp4.Address, ConsoleApp4" column="address_id" cascade="all-delete-orphan" />
+	</class>
+</hibernate-mapping>
